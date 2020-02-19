@@ -46,4 +46,37 @@ with open('./resource/review.txt', 'r') as f:
         print(line, end='###')
         line = f.readline()
 
-    
+# 예제7
+score = []
+with open('./resource/score.txt','r') as f:
+    for line in f:
+        score.append(int(line))   
+    print(score) 
+
+print(sum(score)/len(score))
+print('Average : {:6.3}'.format(sum(score)/len(score)))
+
+
+# 파일 쓰기
+# 예제1
+with open('./resource/write.txt','w') as f:
+    f.write('write test')
+
+# 예제2
+with open('./resource/write.txt','a') as f:
+    f.write('write test')
+
+# 예제3
+from random import randint
+with open('./resource/leegunj.txt','w') as f:
+    for cnt in range(6):
+        f.write(str(randint(0,50))+'\n')
+
+# 예제4
+with open('./resource/print.txt','w') as f:    
+    print("log test", file=f)
+
+# 예제5
+with open('./resource/list.txt','w') as f:
+    li = ['hi','hello','baby']
+    f.writelines(li)
