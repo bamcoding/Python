@@ -11,7 +11,7 @@ class User(models.Model):
 
   # 오프젝트를 문자열로 호출시 리턴값
   def __str__(self):
-    return '사용자'
+    return self.username
 
   class Meta:
     # 테이블 이름

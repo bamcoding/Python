@@ -10,7 +10,7 @@ def logout(request):
   print('logout')
   if request.session.get('user'):
     del(request.session['user'])
-  return redirect('/')
+  return redirect('/user/login')
 
 def login(request):
   if request.method=='POST':

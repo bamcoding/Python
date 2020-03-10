@@ -10,6 +10,12 @@
   </head>
   <body>
     <div class="container">
+      {% if username|length == 0 %}
+      <button onclick="javascript:location.href='/user/login'">log in</button>
+      {% else %}
+      {{ username }}님 환영합니다.
+      <button onclick="javascript:location.href='/user/logout'">logout</button>
+      {% endif %}
       {% block contents %}
       {% endblock %}
     </div>
