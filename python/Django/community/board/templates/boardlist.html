@@ -16,7 +16,7 @@
         {% for board in boards %}
         <tr>
           <th>{{ board.id }}</th>
-          <th>{{ board.title }}</th>
+          <th><a href="/board/detail/{{board.id}}">{{ board.title }}</a></th>
           <th>{{ board.writer }}</th>
           <th>{{ board.modifiedts }}</th>
           <th>{{ board.createdts }}</th>

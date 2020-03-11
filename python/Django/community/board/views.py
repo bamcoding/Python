@@ -32,3 +32,9 @@ def boardwrite(request):
   message = {'form':form}
   message['username']= user.username
   return render(request, 'boardwrite.html', message)
+
+def boarddetail(request, pk):
+  pk = request.session.get('user')
+  user = User.objects.get(pk=pk)
+  board = Board.objects.get(pk=pk)
+  return render(request, 'boarddetail.html',{'board':board, 'username':user.username}) 
