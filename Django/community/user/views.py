@@ -57,7 +57,7 @@ def register(request):
 
     if not (username and email and password and repassword):
       message['error'] = '모든 값을 입력해주세요'
-    elif password != repassword:
+    elif check_password(password,repassword):
       message['error'] = '비밀번호가 다릅니다.'
     else:
       user = User(
@@ -66,4 +66,5 @@ def register(request):
           password=make_password(password)
       )
       user.save()
+      return redirect('/user/login')
     return render(request, 'register.html', message)
